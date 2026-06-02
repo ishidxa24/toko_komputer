@@ -1,0 +1,42 @@
+# Laravel Default & Caches
+/.phpunit.cache
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+.phpactor.json
+.phpunit.result.cache
+
+# Environment Variables (Sangat Krusial)
+# Perhatikan bahwa .env.example TIDAK ada di sini, jadi ia akan ikut ter-upload
+.env
+.env.backup
+.env.production
+
+# Logs & Error tracking
+npm-debug.log
+yarn-error.log
+*.log
+
+# Laravel Homestead / Auth
+Homestead.json
+Homestead.yaml
+/auth.json
+
+# Editor / IDE Specific Files
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+
+# OS Generated Files (Mac & Windows)
+.DS_Store
+Thumbs.db
+
+# SQLite Databases (Safety net)
+/database/*.sqlite
+/database/*.sqlite-journal
