@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\BarangController; // Tambahan import BarangController
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\TransaksiController;
 
 Route::get('/', function () {
     return redirect('login');
@@ -22,6 +24,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('kategori', KategoriController::class);
     Route::resource('barang', BarangController::class); // Tambahan route untuk Barang
     Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
+    Route::resource('user', UserController::class);
+    Route::get('barang-masuk', [TransaksiController::class, 'masuk'])->name('transaksi.masuk');
+    Route::get('barang-keluar', [TransaksiController::class, 'keluar'])->name('transaksi.keluar');
+    Route::post('transaksi', [TransaksiController::class, 'store'])->name('transaksi.store');
 });
 
 require __DIR__.'/auth.php';

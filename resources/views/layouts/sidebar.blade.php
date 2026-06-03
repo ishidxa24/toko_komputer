@@ -9,8 +9,7 @@
 
         <!-- Dashboard -->
         <div>
-            <!-- Contoh menu aktif (warna latar indigo muda, teks indigo tua) -->
-            <a href="{{ route('dashboard') }}" class="block px-4 py-2.5 text-sm font-semibold text-indigo-700 bg-indigo-50 rounded-lg transition-colors">
+            <a href="{{ route('dashboard') }}" class="block px-4 py-2.5 text-sm font-semibold rounded-lg transition-colors {{ request()->routeIs('dashboard') ? 'text-indigo-700 bg-indigo-50' : 'text-gray-600 hover:bg-gray-50 hover:text-indigo-600' }}">
                 Dashboard
             </a>
         </div>
@@ -19,9 +18,9 @@
         <div>
             <h2 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 px-4">Master Data</h2>
             <div class="space-y-1">
-                <a href="{{ route('kategori.index') }}" class="block px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-50 hover:text-indigo-600 transition-colors">Kategori Barang</a>
-                <a href="{{ route('barang.index') }}" class="block px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-50 hover:text-indigo-600 transition-colors">Daftar Barang</a>
-                <a href="#" class="block px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-50 hover:text-indigo-600 transition-colors">Manajemen Pengguna</a>
+                <a href="{{ route('kategori.index') }}" class="block px-4 py-2 text-sm font-medium rounded-lg transition-colors {{ request()->routeIs('kategori.*') ? 'text-indigo-700 bg-indigo-50' : 'text-gray-600 hover:bg-gray-50 hover:text-indigo-600' }}">Kategori Barang</a>
+                <a href="{{ route('barang.index') }}" class="block px-4 py-2 text-sm font-medium rounded-lg transition-colors {{ request()->routeIs('barang.*') ? 'text-indigo-700 bg-indigo-50' : 'text-gray-600 hover:bg-gray-50 hover:text-indigo-600' }}">Daftar Barang</a>
+                <a href="{{ route('user.index') }}" class="block px-4 py-2 text-sm font-medium rounded-lg transition-colors {{ request()->routeIs('user.*') ? 'text-indigo-700 bg-indigo-50' : 'text-gray-600 hover:bg-gray-50 hover:text-indigo-600' }}">Manajemen Pengguna</a>
             </div>
         </div>
 
@@ -29,14 +28,14 @@
         <div>
             <h2 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 px-4">Persediaan Barang</h2>
             <div class="space-y-1">
-                <a href="#" class="block px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-50 hover:text-indigo-600 transition-colors">Barang Masuk</a>
-                <a href="#" class="block px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-50 hover:text-indigo-600 transition-colors">Barang Keluar</a>
+                <a href="{{ route('transaksi.masuk') }}" class="block px-4 py-2 text-sm font-medium rounded-lg transition-colors {{ request()->routeIs('transaksi.masuk') ? 'text-indigo-700 bg-indigo-50' : 'text-gray-600 hover:bg-gray-50 hover:text-indigo-600' }}">Barang Masuk</a>
+                <a href="{{ route('transaksi.keluar') }}" class="block px-4 py-2 text-sm font-medium rounded-lg transition-colors {{ request()->routeIs('transaksi.keluar') ? 'text-indigo-700 bg-indigo-50' : 'text-gray-600 hover:bg-gray-50 hover:text-indigo-600' }}">Barang Keluar</a>
             </div>
         </div>
 
         <!-- Laporan -->
         <div>
-            <a href="{{ route('laporan.index') }}" class="block px-4 py-2.5 text-sm font-semibold text-gray-600 rounded-lg hover:bg-gray-50 hover:text-indigo-600 transition-colors">
+            <a href="{{ route('laporan.index') }}" class="block px-4 py-2.5 text-sm font-semibold rounded-lg transition-colors {{ request()->routeIs('laporan.*') ? 'text-indigo-700 bg-indigo-50' : 'text-gray-600 hover:bg-gray-50 hover:text-indigo-600' }}">
                 Laporan
             </a>
         </div>

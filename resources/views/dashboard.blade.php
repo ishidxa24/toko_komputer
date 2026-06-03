@@ -20,6 +20,13 @@
                 </div>
             </div>
 
+            @php
+                $totalMasuk = \App\Models\Transaksi::where('jenis', 'masuk')->sum('jumlah');
+                $totalKeluar = \App\Models\Transaksi::where('jenis', 'keluar')->sum('jumlah');
+                $stokTerendah = \App\Models\Barang::orderBy('stock', 'asc')->first();
+                $stokTertinggi = \App\Models\Barang::orderBy('stock', 'desc')->first();
+            @endphp
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
 
                 <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-center gap-4">
@@ -56,6 +63,32 @@
                         <p class="text-sm font-semibold text-gray-500">Total Stok Fisik</p>
                         <h4 class="text-2xl font-bold text-gray-800">{{ \App\Models\Barang::sum('stock') }}</h4>
                     </div>
+                </div>
+
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <p class="text-sm font-semibold text-gray-500 mb-1">Total Stok Masuk</p>
+                    <h4 class="text-2xl font-bold text-green-600">{{ $totalMasuk }}</h4>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <p class="text-sm font-semibold text-gray-500 mb-1">Total Stok Keluar</p>
+                    <h4 class="text-2xl font-bold text-red-600">{{ $totalKeluar }}</h4>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <p class="text-sm font-semibold text-gray-500 mb-1">Stok Terendah</p>
+                    <h4 class="text-lg font-bold text-gray-800">{{ $stokTerendah->nama_barang ?? '-' }}</h4>
+                    <p class="text-sm text-gray-500">Stok: {{ $stokTerendah->stock ?? 0 }}</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <p class="text-sm font-semibold text-gray-500 mb-1">Stok Tertinggi</p>
+                    <h4 class="text-lg font-bold text-gray-800">{{ $stokTertinggi->nama_barang ?? '-' }}</h4>
+                    <p class="text-sm text-gray-500">Stok: {{ $stokTertinggi->stock ?? 0 }}</p>
                 </div>
 
             </div>

@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('kategori.index')" :active="request()->routeIs('kategori.*')">
                         {{ __('Kategori') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.*')">
+                        {{ __('Pengguna') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -75,6 +78,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('kategori.index')" :active="request()->routeIs('kategori.*')">
                 {{ __('Kategori') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('user.index')" :active="request()->routeIs('user.*')">
+                {{ __('Pengguna') }}
             </x-responsive-nav-link>
         </div>
 
