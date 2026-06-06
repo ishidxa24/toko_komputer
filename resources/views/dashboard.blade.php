@@ -11,7 +11,7 @@
             <div class="bg-indigo-600 rounded-xl shadow-sm mb-8 overflow-hidden">
                 <div class="px-8 py-10 text-white flex flex-col md:flex-row justify-between items-center">
                     <div>
-                        <h3 class="text-2xl font-bold mb-2">Selamat Datang, {{ Auth::user()->name }}! 👋</h3>
+                        <h3 class="text-2xl font-bold mb-2"></h3>
                         <p class="text-indigo-100 text-sm">Ini adalah ringkasan sistem informasi persediaan barang toko komputermu hari ini.</p>
                     </div>
                     <div class="mt-4 md:mt-0">

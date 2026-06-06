@@ -75,10 +75,6 @@
             </button>
         </form>
 
-        <!-- Teks Bantuan Bawah -->
-        <div class="mt-8 text-center text-xs text-gray-400">
-            Gunakan <span class="font-semibold text-gray-500">admin@admin.com</span> / <span class="font-semibold text-gray-500">password123</span> untuk login.
-        </div>
     </div>
 
 </body>

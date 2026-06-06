@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::get('barang-masuk', [TransaksiController::class, 'masuk'])->name('transaksi.masuk');
     Route::get('barang-keluar', [TransaksiController::class, 'keluar'])->name('transaksi.keluar');
     Route::post('transaksi', [TransaksiController::class, 'store'])->name('transaksi.store');
+    Route::get('laporan/cetak', [LaporanController::class, 'cetak'])->name('laporan.cetak');
 });
 
 require __DIR__.'/auth.php';

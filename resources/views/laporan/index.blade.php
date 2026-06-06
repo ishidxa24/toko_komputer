@@ -22,12 +22,12 @@
                         <p class="text-sm text-gray-500 mt-1">Rekapitulasi seluruh barang yang ada di sistem.</p>
                     </div>
 
-                    <button onclick="window.print()" class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-lg font-bold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 shadow-sm transition-colors">
+                    <a href="{{ route('laporan.cetak', ['dari' => request('dari'), 'sampai' => request('sampai')]) }}" target="_blank" class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-lg font-bold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 shadow-sm transition-colors">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
                         </svg>
                         Cetak Laporan
-                    </button>
+                    </a>
                 </div>
 
                 <div class="overflow-x-auto">
@@ -63,15 +63,10 @@
 
             <div class="bg-white overflow-hidden shadow-sm border border-gray-100 sm:rounded-xl p-8">
 
-                <div class="hidden print:block text-center mb-8 border-b-2 border-gray-800 pb-4">
-                    <h1 class="text-2xl font-bold uppercase tracking-wider">Toko Komputer</h1>
-                    <p class="text-gray-600">Laporan Riwayat Keluar Masuk Barang</p>
-                </div>
-
                 <div class="mb-6 border-b border-gray-100 pb-4">
                     <h3 class="text-lg font-semibold text-gray-800 mb-4">Riwayat Keluar Masuk Barang</h3>
 
-                    <form method="GET" action="{{ route('laporan.index') }}" class="flex flex-wrap items-end gap-3 print:hidden">
+                    <form method="GET" action="{{ route('laporan.index') }}" class="flex flex-wrap items-end gap-3">
                         <div>
                             <label class="block text-sm font-semibold text-gray-700 mb-1">Dari Tanggal</label>
                             <input type="date" name="dari" value="{{ request('dari') }}" class="rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 text-sm">
