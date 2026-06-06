@@ -33,9 +33,11 @@
                             <td class="px-6 py-4 text-gray-600">{{ $item->email }}</td>
                             <td class="px-6 py-4 text-right space-x-3">
                                 <a href="{{ route('user.edit', $item->id) }}" class="text-indigo-600 font-medium hover:underline">Edit</a>
-                                <button type="button"
-                                    @click="konfirmHapus = true; hapusAksi = '{{ route('user.destroy', $item->id) }}'; hapusNama = '{{ $item->name }}'"
-                                    class="text-red-600 font-medium hover:underline">Hapus</button>
+                                @if (auth()->id() !== $item->id)
+                                    <button type="button"
+                                        @click="konfirmHapus = true; hapusAksi = '{{ route('user.destroy', $item->id) }}'; hapusNama = '{{ $item->name }}'"
+                                        class="text-red-600 font-medium hover:underline">Hapus</button>
+                                @endif
                             </td>
                         </tr>
                     @empty
